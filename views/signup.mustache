@@ -1,0 +1,33 @@
+{{! StAuth10222: I Ali Abubaker, 000857347 certify that this material is my original work. No other person's work has been used without due acknowledgement. I have not made my work available to anyone else. }}
+{{>header}}
+
+{{>navigation}}
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>Sign-up for an account</h2>
+      
+      {{#signup_success}}
+        <p style="color:black;"><strong>{{signup_success}} <a href="/login">Login</a> to access your new account.</strong></p>
+      {{/signup_success}}
+      
+      {{#signup_error}}
+        <p style="color:red;"><strong>{{signup_error}}</strong></p>
+      {{/signup_error}}
+      
+      <form action="/signup/create" method="post">
+        <label for="username">Username:</label>
+        <input type="text" name="username" required> <br /> <br />
+        <label for="password">Password:</label>
+        <input type="password" name="password" required> <br /> <br />
+        <input type="submit" value="Sign-up">
+      </form>
+    </div>
+  </div>
+
+  {{>sidebar}}
+
+</div>
+
+{{>footer}}
